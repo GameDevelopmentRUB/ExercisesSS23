@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Sprite idleSprite;
 
     // This array holds the walk cycle
-    [SerializeField] Sprite[] sprites;
+    [SerializeField] Sprite[] moveSprites;
 
     // Time between sprite changes
     [SerializeField] float animationTime = 1f;
@@ -51,11 +51,11 @@ public class PlayerMovement : MonoBehaviour
             timer += Time.deltaTime;
 
             // This will be called when our timer reaches the specified time (and the array contains sprites)
-            if (timer >= animationTime && sprites.Length > 0)
+            if (timer >= animationTime && moveSprites.Length > 0)
             {
                 // Load the next sprite and loop around when end of the array is reached
-                spriteIndex = (spriteIndex + 1) % sprites.Length;
-                sr.sprite = sprites[spriteIndex];
+                sr.sprite = moveSprites[spriteIndex];
+		spriteIndex = (spriteIndex + 1) % moveSprites.Length;
 
                 // Reset the timer. Otherwise it'll continue going up and (timer >= animationTime) will be true in every single frame
                 timer = 0f;
