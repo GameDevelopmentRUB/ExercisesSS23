@@ -11,5 +11,5 @@
 
 ## Exercise hints
 - Set the sorting order **before** you create your world
-- You can deactivate a parent GameObjects together with all of their children with **gameObject.SetActive(false)**
+- You can deactivate a parent GameObjects together with all of its children with **gameObject.SetActive(false)**
 - To access multiple SpriteRenderers, either use an array: `[SerializeField] SpriteRenderer[] renderers`, or use `GetComponentsInChildren()` (https://docs.unity3d.com/ScriptReference/Component.GetComponentsInChildren.html)
