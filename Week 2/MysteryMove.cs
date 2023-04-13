@@ -15,7 +15,7 @@ public class MysteryMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q)) transform.position += new Vector3(0, 1);
         if (Input.GetKeyDown(KeyCode.E)) transform.position += new Vector3(0, -1);
 
-	// This code moves it continuously. Holding I and U at the same time will move it right, since the else-block will not be called
+	// This code moves it continuously. Holding I and U at the same time will move it to the right, since the else-block will not be called
         if (Input.GetKey(KeyCode.I))
             transform.position += Time.deltaTime * speed * new Vector3(1, 0);
         else if (Input.GetKey(KeyCode.U))
