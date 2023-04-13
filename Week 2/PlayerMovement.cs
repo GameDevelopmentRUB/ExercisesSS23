@@ -18,8 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
     int spriteIndex = 0; 
     float timer;
-
-	// Cache the SpriteRenderer (could also be done in Start())
+    
+    // Cache the SpriteRenderer (could also be done in Start())
     void Awake() => sr = GetComponent<SpriteRenderer>();
 
     void Update()
@@ -63,10 +63,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            // Reset the sprite to idle if the character is not moving
+	    // Reset the sprite to idle if the character is not moving
             sr.sprite = idleSprite;
-			spriteIndex = 0;
-			timer = 0f;
+	    spriteIndex = 0;
+	    timer = 0f;
         } 
     }
 }
