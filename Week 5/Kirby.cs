@@ -9,6 +9,9 @@ public class KirbyController : MonoBehaviour
     // This will show a dropdown menu in the inspector where you can choose one or multiple layers
     [SerializeField] LayerMask collisionLayers;
 
+    // A PhysicsMaterial2D lets you adjust friction and bounciness of an object
+    [SerializeField] PhysicsMaterial2D bounceMaterial;
+
     Rigidbody2D rb;
     SpriteRenderer sr;
 
@@ -26,7 +29,10 @@ public class KirbyController : MonoBehaviour
 
         // To prevent a rigidbody from rotating, you can click on the checkbox in the Component or set this value
         rb.freezeRotation = false;
-        
+
+        // This sets the rigidbody's physics material 2D
+        rb.sharedMaterial = bounceMaterial;
+
         // This sets the layer the GameObject is on. You can set which layers collide with each other in the Layer Collision Matrix
         gameobject.layer = 3;
         // To avoid using the integer, you can also use this instead. Of course the layer needs to be created first
